@@ -1,7 +1,7 @@
 # Swagger for Eiffel Documentation
 
 ## Introduction
-This gives a n overview about how to use this Eiffel library in order to produce Swagger documentation from Eiffel annotations. The same terminology as in [the official specificaions](https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md) will be used.
+This gives an overview about how to use this Eiffel library in order to produce Swagger documentation from Eiffel annotations. The same terminology as in [the official specifications](https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md) will be used.
 
 ## Getting started
 Add the library swagger_documentation_generation to your project. Create an object of type SWAGGER_DOC_GENERATOR and call create_documentation on it. Pass the location of your project as the argument. The generator will produce a file called swagger.json. Use this file to create the swagger documentation.
@@ -21,7 +21,7 @@ This is the main object. To create this using Eiffel annotations, one must speci
 note
   sa_spec: "swagger=2.0", "host=www.domain.com", "base_path=/basePath"
 ```
-whereas the 'swagger' is mandatory and host and base_path can be omitted
+whereas the 'swagger' is mandatory and host and base_path can be omitted.
 Further the info object must be initialized:
 
 ```Eiffel
@@ -62,10 +62,10 @@ Whereas, whenever the swagger object allows an array, the annotation tag can be 
   sa_tag: "name=secondTagName", "description=secondTagDescription"
 ```
 
-In cases, where other objects are referenced within an object, such as the scopes object in the security scheme, it is important, to first define the referenced object and then to just use the given name as the parameter (as shown in the example).
+In cases where other objects are referenced within an object, such as the scopes object in the security scheme, it is important to first define the referenced object and then to just use the given name as the parameter (as shown in the example).
 
 ### Paths Object
-The paths object will be created from the operations defined in the feautre clauses. To define a new operation insert at the note section of the respective feature following annotations:
+The paths object will be created from the operations defined in the feature clauses. To define a new operation insert at the note section of the respective feature following annotations:
 
 ```Eiffel
 feature
@@ -98,10 +98,11 @@ feature
 		  ...
 		end
 ```
-The parameters for each object can be taken from the [swagger specs](https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md).Remeber for nested objects, to first declare the object before the reference.
+The parameters for each object can be taken from the [swagger specs](https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md). 
+Remember for nested objects to first declare the object before the reference.
 
 ### Legal Annotations
-Following a list of the swagger objects and their corresponding annotations:
+Following is a list of the swagger objects and their corresponding annotations:
 #### class note section
 annotation | swagger object
 -----------|---------------
